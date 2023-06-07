@@ -1,0 +1,1 @@
+1. content.php file a div class "ftco-animate" remove kore div content show kora lagche.
