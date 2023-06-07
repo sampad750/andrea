@@ -15,14 +15,17 @@ get_header(); ?>
                             <?php 
                             while( have_posts() ){
                                 the_post();
-                                get_template_part( 'template-parts/post/posts');      
+
+
+								the_title();
+                                get_template_part( 'template-parts/post/content.php');      
                             }
                             ?>
                             
                         </div>
                         
                         <?php 
-                        Hostim_Theme_Helper::hostim_post_pagination(); 
+                        
                     }
                     else{
                         get_template_part( 'template-parts/post/content-none');  
