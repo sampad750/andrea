@@ -1,10 +1,5 @@
 <?php
-get_header();
-
-
-//sampad debnath
-
-?>
+get_header(); ?>
 
 <div id="colorlib-main">
 	<section class="ftco-section ftco-no-pt ftco-no-pb">
