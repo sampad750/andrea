@@ -1,5 +1,8 @@
 <?php
-get_header(); ?>
+get_header();
+
+/// add new text
+?>
 
 <div id="colorlib-main">
 	<section class="ftco-section ftco-no-pt ftco-no-pb">
