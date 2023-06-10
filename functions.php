@@ -73,3 +73,9 @@ add_action( 'after_setup_theme', 'andrea_setup' );
 require_once ANDREA_THEME_DIR .'/inc/class/theme-autoload.php';
 
 
+
+
+
+
+
+
