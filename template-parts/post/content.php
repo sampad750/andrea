@@ -1,4 +1,4 @@
-<div class="blog-entry d-md-flex"> <!-- "ftco-animate" use this class not showing this section-->
+<div class="blog-entry ftco-animate d-md-flex">
 	<a href="<?php the_permalink() ?>">
 		<?php the_post_thumbnail( 'thumbnail', array('class'=>'img img-2') )?>
 	</a>
@@ -19,10 +19,17 @@
 						}
 					?>
 				</span>
-				<span><i class="icon-comment2 mr-2"></i>5 Comment</span>
+				<span><i class="icon-comment2 mr-2"></i>
+					<?php echo get_comments_number($post->ID);?> Comment
+				</span>
 			</p>
 		</div>
-		<p class="mb-4">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-		<p><a href="#" class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a></p>
+		<p class="mb-4">
+			<?php
+				$post_content= get_the_content();
+				echo substr($post_content, 0, 120);
+			  ?>
+		</p>
+		<p><a href="<?php the_permalink() ?>" class="btn-custom"><?php _e('Read More', 'andrea')?> <span class="ion-ios-arrow-forward"></span></a></p>
 	</div>
 </div>

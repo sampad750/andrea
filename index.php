@@ -17,9 +17,7 @@ get_header(); ?>
 								}
 								?>
 							</div>
-
 						<?php
-
 						} else {
 							get_template_part('template-parts/post/content-none');
 						} ?>
@@ -28,20 +26,18 @@ get_header(); ?>
 					<div class="row">
 						<div class="col">
 							<div class="block-27">
-								<ul>
-									<li><a href="#">&lt;</a></li>
-									<li class="active"><span>1</span></li>
-									<li><a href="#">2</a></li>
-									<li><a href="#">3</a></li>
-									<li><a href="#">4</a></li>
-									<li><a href="#">5</a></li>
-									<li><a href="#">&gt;</a></li>
-								</ul>
+								<?php
+								the_posts_pagination( array(
+									'mid_size'  => -1,
+									'prev_text' => __( '&lt;', 'andrea' ),
+									'next_text' => __( '&gt;', 'andrea' ),
+								) );
+								?>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-xl-4 sidebar ftco-animate bg-light pt-5">
+				<div class="col-xl-4 sidebar bg-light pt-5"> <!--ftco-animate-->
 					<?php get_sidebar(); ?>
 				</div><!-- END COL -->
 			</div>

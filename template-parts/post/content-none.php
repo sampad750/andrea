@@ -1,1 +1,1 @@
-<h1>post none</h1>
+<h1>No Posts Available</h1>

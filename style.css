@@ -15,3 +15,26 @@ Text Domain: twentytwenty
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
+
+/* block pagination style */
+.block-27 nav {
+    padding: 0;
+    margin: 0; }
+    .block-27 nav a {
+      display: inline-block;
+      margin-bottom: 4px;
+      font-weight: 400; }
+      .block-27 nav a, .block-27 nav span {
+        border: 1px solid #1eafed;
+        text-align: center;
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        border-radius: 50%; }
+      .block-27 span.page-numbers.current {
+        background: #1eafed;
+        color: #fff;
+        border: 1px solid transparent; 
+    }
+

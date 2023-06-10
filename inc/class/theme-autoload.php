@@ -25,7 +25,7 @@ if (!class_exists('Andrea_Theme_Autoload')) {
         public function __construct () {
 
         	// #Theme Helper
-            // $this->theme_helper();
+            // $this->Andrea_helper();
 
             #Theme Enqueue Script
             $this->enqueue_script();
@@ -53,8 +53,8 @@ if (!class_exists('Andrea_Theme_Autoload')) {
             require_once ANDREA_THEME_DIR . '/inc/class/enqueue-script.php';
         }
 
-        // public function theme_helper(){
-        //     require_once HOSTIM_THEME_DIR . '/inc/class/theme-helper.php';
+        // public function Andrea_helper(){
+        //     require_once ANDREA_THEME_DIR . '/inc/class/andrea_helper.php';
         // }
 
         // public function theme_support(){

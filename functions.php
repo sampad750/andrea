@@ -54,7 +54,7 @@ if ( ! function_exists( 'andrea_setup' ) ) :
 		 * Add support for two custom navigation menus.
 		 */
 		register_nav_menus( array(
-			'primary'   => __( 'Primary Menu', 'andrea' ),
+			'main_menu'   => __( 'Main Menu', 'andrea' ),
 		) );
 
 		/**
@@ -71,3 +71,5 @@ add_action( 'after_setup_theme', 'andrea_setup' );
  * Load All Classes.
  */
 require_once ANDREA_THEME_DIR .'/inc/class/theme-autoload.php';
+
+
