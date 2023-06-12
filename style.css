@@ -18,23 +18,106 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 /* block pagination style */
 .block-27 nav {
-    padding: 0;
-    margin: 0; }
-    .block-27 nav a {
-      display: inline-block;
-      margin-bottom: 4px;
-      font-weight: 400; }
-      .block-27 nav a, .block-27 nav span {
-        border: 1px solid #1eafed;
-        text-align: center;
-        display: inline-block;
-        width: 40px;
-        height: 40px;
-        line-height: 40px;
-        border-radius: 50%; }
-      .block-27 span.page-numbers.current {
-        background: #1eafed;
-        color: #fff;
-        border: 1px solid transparent; 
-    }
+  padding: 0;
+  margin: 0;
+}
 
+.block-27 nav a {
+  display: inline-block;
+  margin-bottom: 4px;
+  font-weight: 400;
+}
+
+.block-27 nav a,
+.block-27 nav span {
+  border: 1px solid #1eafed;
+  text-align: center;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+}
+
+.block-27 span.page-numbers.current {
+  background: #1eafed;
+  color: #fff;
+  border: 1px solid transparent;
+}
+
+/* sidebar category list and archive widget style */
+ul.wp-block-categories, ul.wp-block-archives {
+  padding-left: 0px;
+}
+
+ul.wp-block-categories li, ul.wp-block-archives li {
+  position: relative;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  margin-left: 0px;
+  border-bottom: 1px solid #dee2e6;
+  list-style: none;
+  text-transform: capitalize;
+  color: #ccc;
+}
+
+ul.wp-block-categories li:last-child, ul.wp-block-archives li:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+ul.wp-block-categories li a, ul.wp-block-archives li a {
+  display: inline-flex;
+  color: #000000;
+}
+ul.wp-block-categories li a span{
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #ccc;
+}
+
+/* sidebar heading widget style */
+h3.wp-block-heading {
+  font-size: 20px;
+  font-weight: normal;
+  font-style: italic;
+  margin-bottom: -15px;
+}
+
+/* sidebar Tag Cloud widget style */
+.wp-block-tag-cloud a {
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 4px 10px;
+  margin-bottom: 7px;
+  margin-right: 4px;
+  border-radius: 4px;
+  color: #000000;
+  border: 1px solid #ccc;
+  font-size: 11px;
+}
+
+.wp-block-tag-cloud a:hover {
+  border: 1px solid #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+a.wp-block-latest-posts__post-title {
+  color: #000;
+  font-size: 16px;
+  font-family: "Lora", Arial, serif;
+}

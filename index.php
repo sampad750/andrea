@@ -37,9 +37,7 @@ get_header(); ?>
 						</div>
 					</div>
 				</div>
-				<div class="col-xl-4 sidebar bg-light pt-5"> <!--ftco-animate-->
-					<?php get_sidebar(); ?>
-				</div><!-- END COL -->
+				<?php get_sidebar(); ?>
 			</div>
 		</div>
 	</section>

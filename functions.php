@@ -73,6 +73,41 @@ add_action( 'after_setup_theme', 'andrea_setup' );
 require_once ANDREA_THEME_DIR .'/inc/class/theme-autoload.php';
 
 
+/**
+ * Register Sidebar and footer widget
+ */
+function andrea_register_widgets() {
+	/* Register Andrea sidebar widget */
+	register_sidebar(
+		array(
+			'id'            => 'andrea_sidebar',
+			'name'          => __( 'Andrea Sidebar' ),
+			'description'   => __( 'WordPress sidebar widget: Customize and display various content in the sidebar area of your website.' ),
+			'before_widget' => '<div id="%1$s" class="widget sidebar-box ftco-animate %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="sidebar-heading">',
+			'after_title'   => '</h3>',
+		)
+	);
+
+	register_widget( 'Andrea\WpWidgets\Andrea_Newsletter');
+	
+}
+add_action( 'widgets_init', 'andrea_register_widgets' );
+
+require_once ANDREA_THEME_DIR .'/wp-widgets/Andrea_Newsletter.php';
+
+
+
+// Wrap up the Categories count in span tag /
+add_filter( 'wp_list_categories', function ( $links ) {
+	$links = str_replace( '</a> (', '<span>(', $links );
+	$links = str_replace( ')', ')</span> </a>', $links );
+
+	return $links;
+} );
+
+
 
 
 
