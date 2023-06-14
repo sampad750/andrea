@@ -79,6 +79,7 @@ class Andrea_Enqueue_Script {
         wp_enqueue_script( 'scrollax', $this->gtdu . '/assets/js/scrollax.min.js', array( 'jquery' ), '4.3.1', true );
         wp_enqueue_script( 'googleapis', "https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false", array( 'jquery' ), '4.3.1', true );
         wp_enqueue_script( 'google-map', $this->gtdu . '/assets/js/google-map.js', array( 'jquery' ), '4.3.1', true );
+        wp_enqueue_script( 'ajax-chimp', $this->gtdu . '/assets/js/ajax-chimp.js', array( 'jquery' ), '1.0', true );
         wp_enqueue_script( 'theme-js', $this->gtdu . '/assets/js/main.js', array( 'jquery' ), '4.3.1', true );
 
 

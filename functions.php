@@ -72,6 +72,16 @@ add_action( 'after_setup_theme', 'andrea_setup' );
  */
 require_once ANDREA_THEME_DIR .'/inc/class/theme-autoload.php';
 
+/**
+ * Theme's helper functions
+ */
+require_once ANDREA_THEME_DIR . '/inc/class/andrea_helper.php';
+
+/**
+ * Walker Comment's
+ */
+require_once ANDREA_THEME_DIR . '/inc/class/andrea-walker-comment.php';
+
 
 /**
  * Register Sidebar and footer widget
