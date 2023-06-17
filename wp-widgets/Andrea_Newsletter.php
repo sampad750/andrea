@@ -22,6 +22,7 @@ class Andrea_Newsletter extends WP_Widget
 
         $title        = (!empty($instance['title'])) ? $instance['title'] : esc_html__('Newsletter', 'andrea');
         $desc        = (!empty($instance['desc'])) ? $instance['desc'] : esc_html__('Far far away, behind the word mountains, far from the countries Vokalia', 'andrea');
+        
         $action_url   = (!empty($instance['action_url'])) ? $instance['action_url'] : '';
         $theme_btn    = (!empty($instance['theme_btn'])) ? $instance['theme_btn'] : esc_html__('Subscribe', 'andrea');
         $memail       = (!empty($instance['memail'])) ? $instance['memail'] : esc_html__('Email address', 'andrea');
@@ -36,7 +37,7 @@ class Andrea_Newsletter extends WP_Widget
                 echo $args['before_title'] . $title . $args['after_title'];
             } ?>
             <p class="mb-4"><?php echo $desc; ?></p>
-            <form action="#" class="mailchimp subscribe-form" method="post">
+            <form  class="mailchimp subscribe-form" method="post">
                 <div class="form-group">
                     <input type="email" name="email" id="email" class="memail form-control" placeholder="<?php echo esc_attr__($memail, 'andrea'); ?>">
                     <button class="theme_btn mt-2 btn btn-white submit" type="submit">
@@ -77,6 +78,7 @@ class Andrea_Newsletter extends WP_Widget
                             $(".mchimp-errmessage").html(resp.msg).fadeIn(1000);
                         }
                     }
+                    alert('hello');
                 });
             })(jQuery)
         </script>

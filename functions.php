@@ -62,6 +62,13 @@ if ( ! function_exists( 'andrea_setup' ) ) :
 		 * aside, gallery, quote, image, and video
 		 */
 		add_theme_support( 'post-formats', array( 'aside', 'gallery', 'quote', 'image', 'video' ) );
+		add_theme_support( 'html5', array(
+			'search-form',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption',
+		));
 	}
 endif; // myfirsttheme_setup
 add_action( 'after_setup_theme', 'andrea_setup' );
@@ -116,6 +123,13 @@ add_filter( 'wp_list_categories', function ( $links ) {
 
 	return $links;
 } );
+
+// post comment reply link class name replace /
+function andrea_comment_reply_link_class( $class ) {
+	$class = str_replace( "class='comment-reply-link", "class='reply", $class );
+	return $class;
+}
+add_filter( 'comment_reply_link', 'andrea_comment_reply_link_class' );
 
 
 

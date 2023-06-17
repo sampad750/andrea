@@ -36,11 +36,11 @@ get_header(); ?>
                             </div>
                             <div class="about-author d-flex p-4 bg-light">
                                 <div class="bio mr-5">
-                                    <img src="images/person_1.jpg" alt="Image placeholder" class="img-fluid mb-4">
+                                    <?php echo get_avatar( get_the_author_meta( 'ID' ), 128 ); ?>
                                 </div>
                                 <div class="desc">
-                                    <h3>George Washington</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!</p>
+                                    <h3><?php echo ucfirst(get_the_author_meta( 'nicename', get_the_author_meta( 'ID' ) )); ?></h3>
+                                    <p><?php echo get_the_author_meta( 'description', get_the_author_meta( 'ID' ) ); ?></p>
                                 </div>
                             </div>
                         <?php
@@ -60,63 +60,5 @@ get_header(); ?>
         </div>
     </section>
 </div><!-- END COLORLIB-MAIN -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div id="primary" class="content-area">
-    <main id="main" class="site-main" role="main">
-
-        <?php
-        // Start the loop.
-        while (have_posts()) : the_post();
-
-            /*
-             * Include the post format-specific template for the content. If you want to
-             * use this in a child theme, then include a file called called content-___.php
-             * (where ___ is the post format) and that will be used instead.
-             */
-            get_template_part('template-parts/post/content');
-
-            // If comments are open or we have at least one comment, load up the comment template.
-            if (comments_open() || get_comments_number()) :
-                comments_template();
-            endif;
-
-            // Previous/next post navigation.
-            the_post_navigation(array(
-                'next_text' => '<span class="meta-nav" aria-hidden="true">' . __('Next', 'twentyfifteen') . '</span> ' .
-                    '<span class="screen-reader-text">' . __('Next post:', 'twentyfifteen') . '</span> ' .
-                    '<span class="post-title">%title</span>',
-                'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __('Previous', 'twentyfifteen') . '</span> ' .
-                    '<span class="screen-reader-text">' . __('Previous post:', 'twentyfifteen') . '</span> ' .
-                    '<span class="post-title">%title</span>',
-            ));
-
-        // End the loop.
-        endwhile;
-        ?>
-
-    </main><!-- .site-main -->
-</div><!-- .content-area -->
 
 <?php get_footer(); ?>
