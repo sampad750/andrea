@@ -45,6 +45,8 @@ if ( ! function_exists( 'andrea_setup' ) ) :
 		 */
 		add_theme_support( 'automatic-feed-links' );
 
+		add_theme_support( 'editor-styles' );
+
 		/**
 		 * Enable support for post thumbnails and featured images.
 		 */
@@ -89,6 +91,11 @@ require_once ANDREA_THEME_DIR . '/inc/class/andrea_helper.php';
  */
 require_once ANDREA_THEME_DIR . '/inc/class/andrea-walker-comment.php';
 
+/**
+ * Post View Count
+ */
+require_once ANDREA_THEME_DIR . '/inc/post-view.php';
+
 
 /**
  * Register Sidebar and footer widget
@@ -130,6 +137,20 @@ function andrea_comment_reply_link_class( $class ) {
 	return $class;
 }
 add_filter( 'comment_reply_link', 'andrea_comment_reply_link_class' );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

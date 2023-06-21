@@ -78,7 +78,6 @@ class Andrea_Newsletter extends WP_Widget
                             $(".mchimp-errmessage").html(resp.msg).fadeIn(1000);
                         }
                     }
-                    alert('hello');
                 });
             })(jQuery)
         </script>
