@@ -8640,7 +8640,15 @@ h1, h2, h3, h4, h5,
         width: 50%; }
       .blog-entry-2 .text .meta-wrap .meta span {
         margin: 0 5px;
-        color: #b3b3b3; }
+        color: #b3b3b3;
+       }
+        .blog-entry-2 .text .meta-wrap .meta span.already-loved i{
+          color:red;
+        }
+        
+        .blog-entry-2 .text .meta-wrap .meta span i.icon-heart{
+        cursor:pointer;
+        }
         .blog-entry-2 .text .meta-wrap .meta span i {
           margin-right: 10px; }
   .blog-entry-2 .author .img {

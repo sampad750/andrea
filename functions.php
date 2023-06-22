@@ -141,6 +141,17 @@ add_filter( 'comment_reply_link', 'andrea_comment_reply_link_class' );
 
 
 
+function andrea_love_btn(){
+	$post_id 		= $_POST['post_id'] ?? '';
+	$prev_ids 		= get_user_meta(get_current_user_id(), 'love_btn_id', true);
+	$prev_ids 		= $prev_ids ? $prev_ids : 0;
+	$updated_ids 	= $prev_ids .','. $post_id;
+    update_user_meta( get_current_user_id(), 'love_btn_id', $updated_ids );
+}
+add_action('wp_ajax_andrea_love_btn', 'andrea_love_btn');
+add_action('wp_ajax_noprive_andrea_love_btn', 'andrea_love_btn');
+
+
 
 
 
