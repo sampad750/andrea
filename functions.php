@@ -138,9 +138,7 @@ function andrea_comment_reply_link_class( $class ) {
 }
 add_filter( 'comment_reply_link', 'andrea_comment_reply_link_class' );
 
-
-
-
+// post love button /
 function andrea_love_btn(){
 	$post_id 		= $_POST['post_id'] ?? '';
 	$prev_ids 		= get_user_meta(get_current_user_id(), 'love_btn_id', true);

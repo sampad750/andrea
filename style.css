@@ -46,11 +46,13 @@ Use it to make something cool, have fun, and share what you've learned with othe
 }
 
 /* sidebar category list and archive widget style */
-ul.wp-block-categories, ul.wp-block-archives {
+ul.wp-block-categories,
+ul.wp-block-archives {
   padding-left: 0px;
 }
 
-ul.wp-block-categories li, ul.wp-block-archives li {
+ul.wp-block-categories li,
+ul.wp-block-archives li {
   position: relative;
   margin-bottom: 10px;
   padding-bottom: 10px;
@@ -61,17 +63,20 @@ ul.wp-block-categories li, ul.wp-block-archives li {
   color: #ccc;
 }
 
-ul.wp-block-categories li:last-child, ul.wp-block-archives li:last-child {
+ul.wp-block-categories li:last-child,
+ul.wp-block-archives li:last-child {
   margin-bottom: 0;
   border-bottom: none;
   padding-bottom: 0;
 }
 
-ul.wp-block-categories li a, ul.wp-block-archives li a {
+ul.wp-block-categories li a,
+ul.wp-block-archives li a {
   display: inline-flex;
   color: #000000;
 }
-ul.wp-block-categories li a span{
+
+ul.wp-block-categories li a span {
   position: absolute;
   right: 0;
   top: 0;
@@ -103,15 +108,51 @@ h3.wp-block-heading {
   border: 1px solid #000;
 }
 
-
-/*Necessary css for gutenberg*/
-
-
-
-
-
+/* sidebar latest Post widget style */
 a.wp-block-latest-posts__post-title {
   color: #000;
-  font-size: 16px;
   font-family: "Lora", Arial, serif;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: normal;
+}
+
+/*======================
+    404 page style css
+=======================*/
+.page_404 {
+  padding: 40px 0;
+  background: #fff;
+  font-family: 'Arvo', serif;
+}
+
+.page_404 img {
+  width: 100%;
+}
+
+.four_zero_four_bg {
+
+  background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
+  height: 400px;
+  background-position: center;
+}
+
+.four_zero_four_bg h1 {
+  font-size: 80px;
+}
+
+.four_zero_four_bg h3 {
+  font-size: 80px;
+}
+
+.link_404 {
+  color: #fff !important;
+  padding: 10px 20px;
+  background: #1eafed;
+  margin: 20px 0;
+  display: inline-block;
+}
+
+.contant_box_404 {
+  margin-top: -50px;
 }

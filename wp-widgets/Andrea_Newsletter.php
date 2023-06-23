@@ -26,16 +26,20 @@ class Andrea_Newsletter extends WP_Widget
         $action_url   = (!empty($instance['action_url'])) ? $instance['action_url'] : '';
         $theme_btn    = (!empty($instance['theme_btn'])) ? $instance['theme_btn'] : esc_html__('Subscribe', 'andrea');
         $memail       = (!empty($instance['memail'])) ? $instance['memail'] : esc_html__('Email address', 'andrea');
+        $newsletter_layout       = (!empty($instance['newsletter_layout'])) ? $instance['newsletter_layout'] : 'newsletter_classic';
 
 
         echo $args['before_widget'];
+
+        if ( $newsletter_layout == 'newsletter_modern') :
 ?>
 
         <div class="sidebar-box subs-wrap img py-4" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/img/bg_1.jpg);">
             <div class="overlay"></div>
             <?php if ($title) {
                 echo $args['before_title'] . $title . $args['after_title'];
-            } ?>
+            } 
+            ?>
             <p class="mb-4"><?php echo $desc; ?></p>
             <form  class="mailchimp subscribe-form" method="post">
                 <div class="form-group">
@@ -48,6 +52,27 @@ class Andrea_Newsletter extends WP_Widget
             <p class="mchimp-errmessage" style="display: none;"></p>
             <p class="mchimp-sucmessage" style="display: none;"></p>
         </div>
+
+        <?php 
+        else:
+        ?>
+
+        <div class="mb-4">
+            <?php if ($title) {
+                    echo $args['before_title'] . $title . $args['after_title'];
+                } 
+                ?>
+            <form class="mailchimp colorlib-subscribe-form" method="post">
+                <div class="form-group d-flex">
+                <div class="icon"><span class="icon-paper-plane submit" type="submit"></span></div>
+                <input type="email" name="email" id="email" class="memail form-control" placeholder="<?php echo esc_attr__($memail, 'andrea'); ?>">
+            </div>
+            </form>
+            <p class="mchimp-errmessage" style="display: none;"></p>
+            <p class="mchimp-sucmessage" style="display: none;"></p>
+        </div>
+
+        <?php endif; ?>
 
         <script>
             (function($) {
@@ -93,6 +118,7 @@ class Andrea_Newsletter extends WP_Widget
         $action_url   = isset($instance['action_url']) ? esc_attr($instance['action_url']) : '';
         $theme_btn    = isset($instance['theme_btn']) ? esc_attr($instance['theme_btn']) : '';
         $memail      = isset($instance['$memail']) ? esc_attr($instance['$memail']) : '';
+        $select_field_value = ! empty( $instance['newsletter_layout'] ) ? $instance['newsletter_layout'] : '';
 
     ?>
 
@@ -101,9 +127,18 @@ class Andrea_Newsletter extends WP_Widget
             <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
         </p>
 
+        
+        <p>
+            <label for="newsletter_layout"><?php esc_html_e('Layout:', 'andrea'); ?></label>
+            <select id="newsletter_layout" class="widefat" name="<?php echo $this->get_field_name( 'newsletter_layout' ); ?>">
+                <option value="newsletter_classic" <?php selected( $select_field_value, 'newsletter_classic' ); ?>>Classic</option>
+                <option value="newsletter_modern" <?php selected( $select_field_value, 'newsletter_modern' ); ?>>Modern</option>
+            </select>
+        </p>
+
         <p>
             <label for="<?php echo esc_attr($this->get_field_id('desc')); ?>"><?php esc_html_e('Description:', 'andrea'); ?></label>
-            <input class="widefat" id="<?php echo esc_attr($this->get_field_id('desc')); ?>" name="<?php echo esc_attr($this->get_field_name('desc')); ?>" type="text" value="<?php echo esc_attr($desc); ?>" />
+            <textarea row="2" id="<?php echo esc_attr($this->get_field_id('desc')); ?>" name="<?php echo esc_attr($this->get_field_name('desc')); ?>" class="widefat"><?php echo esc_attr($desc); ?></textarea>
         </p>
 
         <p>
@@ -134,6 +169,7 @@ class Andrea_Newsletter extends WP_Widget
         $instance['action_url']   = sanitize_text_field($new_instance['action_url']);
         $instance['theme_btn']    = sanitize_text_field($new_instance['theme_btn']);
         $instance['memail']       = sanitize_text_field($new_instance['memail']);
+        $instance['newsletter_layout']       = sanitize_text_field($new_instance['newsletter_layout']);
         return $instance;
     }
 }
