@@ -46,6 +46,7 @@ if ( ! function_exists( 'andrea_setup' ) ) :
 		add_theme_support( 'automatic-feed-links' );
 
 		add_theme_support( 'editor-styles' );
+		add_theme_support( 'title-tag' );
 
 		/**
 		 * Enable support for post thumbnails and featured images.
@@ -63,7 +64,7 @@ if ( ! function_exists( 'andrea_setup' ) ) :
 		 * Enable support for the following post formats:
 		 * aside, gallery, quote, image, and video
 		 */
-		add_theme_support( 'post-formats', array( 'aside', 'gallery', 'quote', 'image', 'video' ) );
+		//add_theme_support( 'post-formats', array( 'aside', 'gallery', 'quote', 'image', 'video' ) );
 		add_theme_support( 'html5', array(
 			'search-form',
 			'comment-form',
@@ -98,6 +99,13 @@ require_once ANDREA_THEME_DIR . '/inc/post-view.php';
 
 
 /**
+ * Register Sidebar Widgets
+ */
+//require_once ANDREA_THEME_DIR . '/inc/sidebars.php';
+
+
+
+/**
  * Register Sidebar and footer widget
  */
 function andrea_register_widgets() {
@@ -105,21 +113,17 @@ function andrea_register_widgets() {
 	register_sidebar(
 		array(
 			'id'            => 'andrea_sidebar',
-			'name'          => __( 'Andrea Sidebar' ),
-			'description'   => __( 'WordPress sidebar widget: Customize and display various content in the sidebar area of your website.' ),
+			'name'          => __( 'Andrea Sidebar', 'andrea' ),
+			'description'   => __( 'WordPress sidebar widget: Customize and display various content in the sidebar area of your website.', 'andrea' ),
 			'before_widget' => '<div id="%1$s" class="widget sidebar-box ftco-animate %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h3 class="sidebar-heading">',
 			'after_title'   => '</h3>',
 		)
 	);
-
-	register_widget( 'Andrea\WpWidgets\Andrea_Newsletter');
 	
 }
 add_action( 'widgets_init', 'andrea_register_widgets' );
-
-require_once ANDREA_THEME_DIR .'/wp-widgets/Andrea_Newsletter.php';
 
 
 

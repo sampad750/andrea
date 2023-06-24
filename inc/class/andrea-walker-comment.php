@@ -41,7 +41,7 @@ if (!class_exists('Andrea_Walker_Comment')) {
 
                 <?php
                 if ('0' === $comment->comment_approved) : ?>
-                    <em> <?php esc_html_e('Your comment is awaiting moderation.', 'docy') ?></em><br />
+                    <em> <?php esc_html_e('Your comment is awaiting moderation.', 'andrea') ?></em><br />
                 <?php
                 endif;
                 ?>

@@ -18,6 +18,7 @@
     <?php wp_head(); ?>
   </head>
   <body <?php body_class(); ?>>
+  <?php wp_body_open(); ?>
 
 	<div id="colorlib-page">
 		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>

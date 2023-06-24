@@ -7,7 +7,7 @@ if (!defined('ABSPATH')) {
  * @class        Andrea_Enqueue_Script
  * @version      1.0
  * @category     Class
- * @author       ThemeTags
+ * @author       Sampad Debnath
  */
 class Andrea_Enqueue_Script {
 
@@ -21,6 +21,32 @@ class Andrea_Enqueue_Script {
             self::$instance = new self();
         }
         return self::$instance;
+    }
+    /**
+     * Register Google fonts.
+     *
+     * @return string Google fonts URL for the theme.
+     */
+    public function andrea_fonts_url() {
+        $fonts_url = '';
+        $fonts     = array();
+        $subsets   = '';
+    
+        /* Body font */
+        if ( 'off' !== 'on' ) {
+            $fonts[] = "Roboto:300,400,500,600,700";
+        }
+    
+        $is_ssl = is_ssl() ? 'https' : 'http';
+    
+        if ( $fonts ) {
+            $fonts_url = add_query_arg( array(
+                'family' => urlencode( implode( '|', $fonts ) ),
+                'subset' => urlencode( $subsets ),
+            ), "$is_ssl://fonts.googleapis.com/css" );
+        }
+    
+        return $fonts_url;
     }
 
     /**
@@ -57,6 +83,7 @@ class Andrea_Enqueue_Script {
         wp_enqueue_style('timepicker', $this->gtdu . '/assets/css/jquery.timepicker.css');
         wp_enqueue_style('flaticon', $this->gtdu . '/assets/css/flaticon.css');
         wp_enqueue_style('icomoon', $this->gtdu . '/assets/css/icomoon.css');
+        wp_enqueue_style('wpd-style', $this->gtdu . '/assets/css/wpd-style.css');
         wp_enqueue_style('theme-style', $this->gtdu . '/assets/css/style.css');
 
         wp_enqueue_style('andrea-root', get_stylesheet_uri(), array(), wp_get_theme()->get('Version'));

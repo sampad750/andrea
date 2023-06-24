@@ -21,7 +21,6 @@ get_header(); ?>
 						} else {
 							get_template_part('template-parts/post/content-none');
 						} ?>
-
 					</div><!-- END-->
 					<div class="row">
 						<div class="col">

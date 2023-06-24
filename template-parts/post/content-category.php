@@ -22,8 +22,8 @@ if ( in_array( get_the_ID(), $firstExplode ) ) {
             <h3 class="mb-4"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h3>
             <p class="mb-4">
                 <?php
-                    $post_content = get_the_content();
-                    echo substr($post_content, 0, 250);
+                $post_content = get_the_content(get_the_ID());
+                echo wp_trim_words($post_content, 30, false);
                 ?>
             </p>
             <div class="author mb-4 d-flex align-items-center">

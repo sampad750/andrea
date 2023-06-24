@@ -48,7 +48,7 @@ $is_comments = have_comments() ? 'have_comments' : 'no_comments';
 
         <?php
         if (!comments_open() && get_comments_number() && post_type_supports(get_post_type(), 'comments')) : ?>
-            <p class="no-comments"><?php esc_html_e('Comments are closed.', 'landpagy'); ?></p>
+            <p class="no-comments"><?php esc_html_e('Comments are closed.', 'andrea'); ?></p>
         <?php
         endif;
 
@@ -77,7 +77,7 @@ $is_comments = have_comments() ? 'have_comments' : 'no_comments';
             'title_reply'           => esc_html__('Leave a Comment', 'andrea'),
             'title_reply_after'     => '</h3>',
             'comment_notes_before'  => '',
-            'comment_field'         => '<div class="form-group"><textarea name="comment" id="comment" class="form-control message"></textarea><label class="floating-label">' . esc_html__('Comment type...', 'landpagy') . '</label></div>',
+            'comment_field'         => '<div class="form-group"><textarea name="comment" id="comment" class="form-control message"></textarea><label class="floating-label">' . esc_html__('Comment type...', 'andrea') . '</label></div>',
             'comment_notes_after'   => '',
             'submit_button'         => '<button type="submit" name="%1$s" id="%2$s" class="%3$s" value="%4$s">' . esc_html__('Post Comment', 'andrea') . '</button>',
 
