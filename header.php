@@ -11,9 +11,7 @@
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet"> -->
 
     <?php wp_head(); ?>
   </head>
@@ -33,7 +31,7 @@
 
 			<div class="colorlib-footer">
 				<h1 id="colorlib-logo" class="mb-4">
-					<a href="<?php site_url(); ?>" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/img/bg_1.jpg);">
+					<a href="<?php home_url(); ?>" style="background-image: url(<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/bg_1.jpg);">
 						<?php
 							$site_name = get_bloginfo('name');
 							echo ucfirst($site_name);
@@ -50,7 +48,7 @@
 					</form>
 				</div>
 				<p class="pfooter"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-	  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://spider-themes.net/" target="_blank">Spider Theme</a>
+	  Copyright &copy;<?php the_time('Y'); ?> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://spider-themes.net/" target="_blank">Spider Theme</a>
 	  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
 			</div>
 		</aside> <!-- END COLORLIB-ASIDE -->

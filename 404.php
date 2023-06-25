@@ -27,7 +27,7 @@ get_header();
 
                             <p><?php _e('The page you are looking for not avaible!', 'andrea'); ?></p>
 
-                            <a href="<?php echo home_url(); ?>" class="link_404"><?php _e('Go to Home', 'andrea'); ?></a>
+                            <a href="<?php echo esc_url(home_url()); ?>" class="link_404"><?php _e('Go to Home', 'andrea'); ?></a>
                         </div>
                     </div>
                 </div>

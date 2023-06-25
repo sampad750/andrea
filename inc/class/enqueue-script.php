@@ -34,7 +34,8 @@ class Andrea_Enqueue_Script {
     
         /* Body font */
         if ( 'off' !== 'on' ) {
-            $fonts[] = "Roboto:300,400,500,600,700";
+            $fonts[] = "Poppins:300,400,500,600,700";
+            $fonts[] = "Lora:400,400i,700,700i";
         }
     
         $is_ssl = is_ssl() ? 'https' : 'http';
@@ -71,6 +72,8 @@ class Andrea_Enqueue_Script {
 
     /* Register CSS */
     public function css_reg() {
+
+        wp_enqueue_style( 'andrea-fonts', $this->andrea_fonts_url(), array(), null );
 
         wp_enqueue_style('open-iconic', $this->gtdu . '/assets/css/open-iconic-bootstrap.min.css');
         wp_enqueue_style('animate', $this->gtdu . '/assets/css/animate.css');

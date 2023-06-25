@@ -153,6 +153,19 @@ function andrea_love_btn(){
 add_action('wp_ajax_andrea_love_btn', 'andrea_love_btn');
 add_action('wp_ajax_noprive_andrea_love_btn', 'andrea_love_btn');
 
+// Register Block Style
+if ( function_exists( 'register_block_style' ) ) {
+    register_block_style(
+        'core/quote',
+        array(
+            'name'         => 'blue-quote',
+            'label'        => __( 'Blue Quote', 'andrea' ),
+            'is_default'   => true,
+            'inline_style' => '.wp-block-quote.is-style-blue-quote { color: blue; }',
+        )
+    );
+}
+
 
 
 
