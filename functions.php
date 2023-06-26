@@ -119,7 +119,19 @@ function andrea_register_widgets() {
 			'after_widget'  => '</div>',
 			'before_title'  => '<h3 class="sidebar-heading">',
 			'after_title'   => '</h3>',
-		)
+		),
+	);
+	// left Sidebar
+	register_sidebar(
+		array(
+			'id'            => 'andrea_left_sidebar',
+			'name'          => __( 'Andrea Left Sidebar', 'andrea' ),
+			'description'   => __( 'WordPress sidebar widget: Customize and display various content in the sidebar area of your website.', 'andrea' ),
+			'before_widget' => '<div id="%1$s" class="widget sidebar-box ftco-animate %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3>',
+			'after_title'   => '</h3>',
+		),
 	);
 	
 }
